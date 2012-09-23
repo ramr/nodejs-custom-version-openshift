@@ -52,9 +52,11 @@ Add this `github nodejs-custom-version-openshift` repository
 Optionally, specify the custom version of Node.js you want to run with
 (Default is v0.8.9).
 If you want to more later version of Node (example v0.9.1), you can change
-to that by just writing it to the end of the NODEJS_VERSION file.
+to that by just writing it to the end of the NODEJS_VERSION file and
+committing that change.
 
     echo "0.9.1" >> .openshift/markers/NODEJS_VERSION
+    git commit . -m 'use Node version 0.9.1'
 
 Then push the repo to OpenShift
 
