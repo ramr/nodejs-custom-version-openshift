@@ -37,16 +37,16 @@ Create an account at http://openshift.redhat.com/
 
 Create a namespace, if you haven't already do so
 
-   rhc domain create <yournamespace>
+    rhc domain create <yournamespace>
 
 Create a nodejs-0.6 application (you can name it anything via -a)
 
     rhc app create -a palinode  -t nodejs-0.6
 
-Add this `github nodejs-custom-version-openshift-quickstart` repository
+Add this `github nodejs-custom-version-openshift` repository
 
     cd palinode
-    git remote add upstream -m master git@github.com:ramr/nodejs-custom-version-openshift-quickstart.git
+    git remote add upstream -m master git@github.com:ramr/nodejs-custom-version-openshift.git
     git pull -s recursive -X theirs upstream master
 
 Optionally, specify the custom version of Node.js you want to run with
