@@ -46,7 +46,7 @@ Create a nodejs-0.6 application (you can name it anything via -a)
 Add this `github nodejs-custom-version-openshift` repository
 
     cd palinode
-    git remote add upstream -m master git@github.com:ramr/nodejs-custom-version-openshift.git
+    git remote add upstream -m master git://github.com/ramr/nodejs-custom-version-openshift.git
     git pull -s recursive -X theirs upstream master
 
 Optionally, specify the custom version of Node.js you want to run with
