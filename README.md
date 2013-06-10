@@ -11,8 +11,8 @@ Selecting a Node version to install/use
 To select the version of Node.js that you want to run, just edit or add
 a version to the .openshift/markers/NODEJS_VERSION file.
 
-    Example: To install Node.js version 0.9.1, you can run:
-       $ echo -e "0.9.1\n" >> .openshift/markers/NODEJS_VERSION
+    Example: To install Node.js version 0.10.10, you can run:
+       $ echo 0.10.10 >> .openshift/markers/NODEJS_VERSION
 
 
 The action_hooks in this application will use that NODEJS_VERSION marker
@@ -51,12 +51,12 @@ Add this `github nodejs-custom-version-openshift` repository
 
 Optionally, specify the custom version of Node.js you want to run with
 (Default is v0.8.9).
-If you want to more later version of Node (example v0.9.1), you can change
+If you want to more later version of Node (example v0.10.10), you can change
 to that by just writing it to the end of the NODEJS_VERSION file and
 committing that change.
 
-    echo 0.9.1 >> .openshift/markers/NODEJS_VERSION
-    git commit . -m 'use Node version 0.9.1'
+    echo 0.10.10 >> .openshift/markers/NODEJS_VERSION
+    git commit . -m 'use Node version 0.10.10'
 
 Then push the repo to OpenShift
 
