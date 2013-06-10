@@ -55,7 +55,7 @@ If you want to more later version of Node (example v0.9.1), you can change
 to that by just writing it to the end of the NODEJS_VERSION file and
 committing that change.
 
-    echo "0.9.1" >> .openshift/markers/NODEJS_VERSION
+    echo 0.9.1 >> .openshift/markers/NODEJS_VERSION
     git commit . -m 'use Node version 0.9.1'
 
 Then push the repo to OpenShift
