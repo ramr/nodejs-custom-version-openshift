@@ -50,7 +50,7 @@ Add this `github nodejs-custom-version-openshift` repository
     git pull -s recursive -X theirs upstream master
 
 Optionally, specify the custom version of Node.js you want to run with
-(Default is v0.8.9).
+(Default is v0.8.24).
 If you want to more later version of Node (example v0.10.10), you can change
 to that by just writing it to the end of the NODEJS_VERSION file and
 committing that change.
