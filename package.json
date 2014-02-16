@@ -1,7 +1,7 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "name": "nodejs-Custom-Version-Sample",
+  "version": "1.0.1",
+  "description": "OpenShift Node.js Custom Version Sample Application",
   "keywords": [
     "OpenShift",
     "Node.js",
@@ -9,14 +9,14 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
+    "name": "ramr",
     "email": "ramr@example.org",
-    "url":  "http://openshift.redhat.com/"
+    "url":  "http://www.openshift.com/"
   },
-  "homepage": "http://openshift.redhat.com/",
+  "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
-    "url": "https://gitub.com/openshift/crankcase"
+    "url": "https://gitub.com/ramr/nodejs-custom-version-openshift"
   },
 
   "engines": {
