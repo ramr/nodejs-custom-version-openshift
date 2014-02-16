@@ -79,6 +79,26 @@ function _install_nodejs() {
 }  #  End of function  _install_nodejs.
 
 
+#  Ensure npm and node symlinks exist in ~/.node_modules/.bin/ directory.
+function _ensure_symlinks_in_node_modules_bin_dir() {
+   zdir="$HOME/.node_modules/.bin/"
+   if [ -d "$zdir" ]; then
+      ln -sf "$(get_npm_bin_path)/npm"   "$zdir"
+      ln -sf "$(get_node_bin_path)/node" "$zdir"
+   fi
+
+}  #  End of function  _ensure_symlinks_in_node_modules_bin_dir.
+
+
+#  Ensure context - this is a bit too hacky.
+function _ensure_context_exists() {
+   zenv="$OPENSHIFT_HOMEDIR/nodejs/configuration/node.env"
+   if ! egrep '^\s*function\s+nodejs_context' "$zenv" > /dev/null 2>&1; then
+      echo -e "function nodejs_context() { bash -c \"\$@\"; }\n" >> "$zenv" || :
+   fi
+
+}  #  End of function  _ensure_context_exists.
+
 
 #  Ensure the shell env setup bits are added to user's .bash_profile.
 function _ensure_bash_profile_setup() {
@@ -118,6 +138,12 @@ function ensure_node_is_installed() {
    else
       _install_nodejs "$ver"
    fi
+
+   #  Ensure node and npm symlinks exist in ~/.node_modules/.bin directory.
+   _ensure_symlinks_in_node_modules_bin_dir
+
+   #  Ensure context exists.
+   _ensure_context_exists
 
    #  Ensure .bash_profile sets up path for custom Node[.js] version.
    _ensure_bash_profile_setup
