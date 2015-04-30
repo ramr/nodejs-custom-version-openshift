@@ -11,8 +11,8 @@ Selecting a Node version to install/use
 To select the version of Node.js that you want to run, just edit or add
 a version to the .openshift/markers/NODEJS_VERSION file.
 
-    Example: To install Node.js version 0.11.11, you can run:
-       $ echo 0.11.11 >> .openshift/markers/NODEJS_VERSION
+    Example: To install Node.js version 0.12.2, you can run:
+       $ echo 0.12.2 >> .openshift/markers/NODEJS_VERSION
 
 
 The action_hooks in this application will use that NODEJS_VERSION marker
@@ -41,8 +41,7 @@ Create a namespace, if you haven't already do so
 
 Create a nodejs application (you can name it anything via -a)
 
-    rhc app create -a palinode  -t nodejs-0.6
-    #  OR:  rhc app create -a palinode  -t nodejs-0.10
+    rhc app create -a palinode  -t nodejs-0.10
 
 Add this `github nodejs-custom-version-openshift` repository
 
@@ -51,13 +50,13 @@ Add this `github nodejs-custom-version-openshift` repository
     git pull -s recursive -X theirs upstream master
 
 Optionally, specify the custom version of Node.js you want to run with
-(Default is v0.10.25).
-If you want to more later version of Node (example v0.11.11), you can change
+(Default is v0.12.2).
+If you want to more later version of Node (example v0.12.3), you can change
 to that by just writing it to the end of the NODEJS_VERSION file and
 committing that change.
 
-    echo 0.11.11 >> .openshift/markers/NODEJS_VERSION
-    git commit . -m 'use Node version 0.11.11'
+    echo 0.12.3 >> .openshift/markers/NODEJS_VERSION
+    git commit . -m 'use Node version 0.12.3'
 
 Then push the repo to OpenShift
 
