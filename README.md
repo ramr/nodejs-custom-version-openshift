@@ -14,6 +14,9 @@ a version to the .openshift/markers/NODEJS_VERSION file.
     Example: To install Node.js version 0.12.5, you can run:
        $ echo 0.12.5 >> .openshift/markers/NODEJS_VERSION
 
+    Or alternatively, edit the ```.openshift/markers/NODEJS_VERSION``` file
+    in your favorite editor aka vi ;^)
+
 
 The action_hooks in this application will use that NODEJS_VERSION marker
 file to download and extract that Node version if it is available on
@@ -51,12 +54,19 @@ Add this `github nodejs-custom-version-openshift` repository
 
 Optionally, specify the custom version of Node.js you want to run with
 (Default is v0.12.5).
-If you want to more later version of Node (example v0.12.6), you can change
+If you want to more later version of Node (example v0.12.42), you can change
 to that by just writing it to the end of the NODEJS_VERSION file and
 committing that change.
 
-    echo 0.12.6 >> .openshift/markers/NODEJS_VERSION
-    git commit . -m 'use Node version 0.12.6'
+    echo 0.12.42 >> .openshift/markers/NODEJS_VERSION
+    #
+    # Or alternatively, edit the .openshift/markers/NODEJS_VERSION file
+    # in your favorite editor aka vi ;^)
+    #
+    # Note: 0.12.42 doesn't exist (as yet) and is a fictitious version
+    #       mentioned here solely for demonstrative purposes.
+    #
+    git commit . -m 'use Node version 0.12.42'
 
 Then push the repo to OpenShift
 
