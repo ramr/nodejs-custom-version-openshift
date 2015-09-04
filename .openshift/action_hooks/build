@@ -24,9 +24,18 @@ fi
 
 
 #  Do npm install with the new npm binary.
-if [ -f "${OPENSHIFT_REPO_DIR}"/package.json ]; then
+#  check if Meteor build is available 
+if [ -f "${OPENSHIFT_REPO_DIR}"/programs/server/package.json ]; then
+   echo "  - Installing Meteor 1.1 dependencies "
+   echo
+  (cd "${OPENSHIFT_REPO_DIR}/programs/server/npm/npm-bcrypt/node_modules"; rm -rf bcrypt) 
+  (cd "${OPENSHIFT_REPO_DIR}/programs/server";export TMPDIR="tmp"; npm install bcrypt -d --cache ${OPENSHIFT_DATA_DIR})
+  (cd "${OPENSHIFT_REPO_DIR}/programs/server";export TMPDIR="tmp"; npm install -d --cache ${OPENSHIFT_DATA_DIR})
+elif [ -f "${OPENSHIFT_REPO_DIR}"/package.json ]; then
    echo "  - Installing dependencies w/ new version of npm ... "
    echo
    (cd "${OPENSHIFT_REPO_DIR}"; export TMPDIR="/tmp"; npm install -d)
+else 
+   echo "ERROR : Can not find a node app to run"
 fi
 
