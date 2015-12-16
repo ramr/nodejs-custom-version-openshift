@@ -16,7 +16,7 @@
   "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
-    "url": "https://gitub.com/ramr/nodejs-custom-version-openshift"
+    "url": "https://github.com/ramr/nodejs-custom-version-openshift"
   },
 
   "engines": {
